@@ -1,0 +1,38 @@
+name: Build Pipeline
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+env:
+  OUTPUT_FOLDER: "output"
+  
+jobs:
+  pack-library:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository for deployment
+        uses: actions/checkout@v7
+
+      - name: Prepare library package
+        run: |
+          mkdir -p ./${{ env.OUTPUT_FOLDER }}/hal/avr0/rtc
+          cp -r ./rtc.c ./${{ env.OUTPUT_FOLDER }}/hal/avr0/rtc/
+          cp -r ./rtc.h ./${{ env.OUTPUT_FOLDER }}/hal/avr0/rtc/
+          cp -r ./LICENSE  ./${{ env.OUTPUT_FOLDER }}/LICENSE
+          
+      - name: Pack files for upload
+        run: |
+          tar -czvf build.tar.gz ./${{ env.OUTPUT_FOLDER }}
+          zip -r build.zip ./${{ env.OUTPUT_FOLDER }}
+
+      - name: Upload library package
+        uses: actions/upload-artifact@v7
+        with:
+            name: library-package
+            path: ./${{ env.OUTPUT_FOLDER }}
+            retention-days: 1
