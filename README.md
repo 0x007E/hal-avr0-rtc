@@ -2,6 +2,8 @@
 
 # `hal-avr0-rtc` - AVR0 RTC Hardware Abstraction
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/0x007E/hal-avr0-rtc)
+
 The `hal-avr0-rtc` is a lightweight hardware abstraction library for `AVR0` microcontrollers. It provides a clean interface for `rtc` clock initialization while hiding direct register-level interaction from higher software layers. The library is intended for projects that want to separate low-level device startup code from application logic and establish a small, reusable system layer for AVR0 targets.
 
 ## Features
