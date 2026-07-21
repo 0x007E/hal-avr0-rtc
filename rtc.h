@@ -13,7 +13,7 @@
  *
  * @note This file is part of a larger project and subject to the license specified in the repository. For updates and the complete revision history, see the GitHub repository.
  *
- * @see https://github.com/0x007e/hal-avr0-rtc "AVR0 GitHub Repository"
+ * @see https://github.com/0x007e/hal-avr0-rtc "AVR0 RTC HAL GitHub Repository"
  */
 
 #ifndef RTC_H_

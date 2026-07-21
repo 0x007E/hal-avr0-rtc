@@ -16,7 +16,7 @@
  *       (typically `RTC_CNT_vect`) must be implemented in the application
  *       for the RTC interrupt to be serviced.
  *
- * @see https://github.com/0x007e/hal-avr0-rtc "AVR0 GitHub Repository"
+ * @see https://github.com/0x007e/hal-avr0-rtc "AVR0 RTC HAL GitHub Repository"
  */
 
 #include "rtc.h"
